@@ -1,0 +1,51 @@
+﻿<Page x:Class="SurvivalBuilderApp.CharacterCreation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SurvivalBuilderApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      KeepAlive="True"
+      Title="CharacterCreation">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Column="0" HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="380">
+            <Label Content="CHARACTER CREATION" Width="370" Background="White" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontSize="20" Padding="5" Margin="0,0,0,15"/>
+            <Label Content="Character Name:" FontFamily="Times New Roman"/>
+            <TextBox x:Name="playerNameTextbox" Height="23" TextWrapping="Wrap" MinWidth="240" TextChanged="playerNameTextbox_TextChanged" FontFamily="Times New Roman"/>
+            <Expander Header="Origin" Width="370" FontFamily="Times New Roman" Margin="0,15,0,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <RadioButton Grid.Row="0" x:Name="desertRb" Content="Desert" Width="185" Checked="desertRb_Checked" Margin="48,5,134.4,5.2" VerticalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Times New Roman"/>
+                    <RadioButton Grid.Row="1" x:Name="mountainsRb" Content="Mountains" Width="185" Checked="mountainsRb_Checked" Margin="48,4.8,134.4,5.4" VerticalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Times New Roman"/>
+                    <RadioButton Grid.Row="2" x:Name="plainsRb" Content="Plains" Width="185" Checked="plainsRb_Checked" Margin="48,4.6,134.4,5.2" VerticalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Times New Roman"/>
+                    <RadioButton Grid.Row="3" x:Name="cityRb" Content="City" Width="185" Checked="cityRb_Checked" Margin="48,4.8,134.4,5" VerticalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Times New Roman"/>
+                    <RadioButton Grid.Row="4" x:Name="forestRb" Content="Forest" Width="185" Checked="forestRb_Checked" Margin="48,5,134.4,4.8" VerticalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Times New Roman"/>
+                </Grid>
+            </Expander>
+            <Button x:Name="createCharacter" Content="Create Character" Width="370" Click="createCharacter_Click" Margin="0,15,0,0" FontFamily="Times New Roman"/>
+        </Menu>
+        <Menu Grid.Column="1" HorizontalAlignment="Right" Height="430" Margin="0,10,0,0" VerticalAlignment="Top" Width="390" FontFamily="Times New Roman">
+            <Label Content="Name: " Width="50" FontFamily="Times New Roman"/>
+            <Label x:Name="playerName" Content="" MinWidth="300" FontFamily="Times New Roman" Padding="0,5,5,5"/>
+            <Label Content="Origin: " Width="50" FontFamily="Times New Roman"/>
+            <Label x:Name="originLocaleName" Content="" MinWidth="300" FontFamily="Times New Roman" Padding="0,5,5,5"/>
+            <Image x:Name="originLandscape" Height="144" Width="380"/>
+            <Label Content="Bonus:" Width="50" FontFamily="Times New Roman"/>
+            <Label x:Name="bonusDesc" Content="" MinWidth="300" FontFamily="Times New Roman" Padding="0,5,5,5"/>
+            <Label Content="Stats:" Width="50" FontFamily="Times New Roman"/>
+            <Label x:Name="statsDesc" Content="" MinWidth="300" FontFamily="Times New Roman" Padding="0,5,5,5"/>
+        </Menu>
+    </Grid>
+</Page>
